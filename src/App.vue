@@ -134,11 +134,20 @@
           />
       </div>
     </div>
-    <q-footer class="" style="background-color:#000000">
-        <q-toolbar>
-          <q-toolbar-title>Footer</q-toolbar-title>
-        </q-toolbar>
-    </q-footer>
+    <v-row>
+      <q-toolbar style="background-color:#222222; color: white;">
+        <q-space />
+        <span class="text-caption">
+          Copyright © 2022 - Quincy Worx
+        </span>
+        <q-space />
+
+          <q-btn flat size="sm">
+            Member Login
+          </q-btn>
+          <!-- <q-icon name="cancel" color="white" /> -->
+      </q-toolbar>
+    </v-row>
   </q-layout>
 </template>
 
