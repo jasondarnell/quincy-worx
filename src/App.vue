@@ -28,9 +28,9 @@
           Quincy's Premiere Coworking Space
         </div>
         <br />
-        <div class="text-center text-h3 q-ma-lg ">
-          <q-btn class="q-px-lg" size="xl" color="orange" rounded>
-              Join
+        <div class="text-center q-ma-lg ">
+          <q-btn class="q-px-xl" size="lg" color="orange" rounded>
+              <span class="text-subtitle1" style="text-transform: none">Join Now</span>
           </q-btn>
         </div>
     </q-header>
@@ -43,24 +43,46 @@
     </q-page-container>
 
     <div class="row q-ma-lg">
-      <div class="col-1" />
-      <div class="col-4 q-mt-lg">
+      <div class="col-md-1" />
+      <div class="col-md-4 q-mt-lg text-center">
         <q-img 
           :src="getImageUrl('assets/building-images/building_11.jpg')" 
           style="border-radius: 50%; width:22vw; height:22vw;"
           />
       </div>
-      <div class="col-6 text-center q-mt-lg">
-          <p class="text-h5">
-            About Quincy Worx - Co-Working and Meeting Space
+      <div class="col-md-6 q-mt-lg">
+        <div class="text-center">
+          <p class="text-h5 " >
+            Quincy Worx Amenities
           </p>
           <p>
-            The Foundry on Main is a Dynamic Cowork Space on North Main Street in Evansville, IN offering an office environment for individuals that work remotely and for small companies in need of office space. Inspiring creativity, collaboration, and providing a positive environment for small, growing businesses to thrive.
+            Quincy Worx Space provides a Flexible Solution for professionals looking for a Better Alternative Work Environment, Collaboration, Networking, Increased Creativity, and Amenities to promote High Productivity for success. 
           </p>
+        </div>
+          <div class="row">
+              <div class="col-md-6">
+                <ul>
+                  <li>Internet Access</li>
+                  <li>Printer, Copier, Scanner</li>
+                  <li>Conference Room</li>
+                  <li>Coffee/Tea</li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Internet Access</li>
+                  <li>Printer, Copier, Scanner</li>
+                  <li>Conference Room</li>
+                  <li>Coffee/Tea</li>
+                  <li></li>
+                </ul>
+              </div>
+          </div>
       </div>
-      <div class="col-1" />
+      <div class="col-md-1" />
     </div>
-    <div class="row">
+    <div class="row" >
       <div class="col-3"></div>
       <div class="col-6">
         <q-carousel
@@ -89,8 +111,35 @@
       </div>
       <div class="col-3"></div>
     </div>
+    <div class="row q-ma-lg">
+      <div class="col-md-6 q-mt-lg">
+        <div class="q-ma-lg">
+          <p class="text-h5 text-center" >
+            Quincy Worx
+          </p>
+          <p class="text-subtitle1">
+            3701 East Lake Center <br />
+            Suite 1 <br />
+            Quincy, Illinois <br /> 
+            62305 <br />
+            <br />
+            Phone: 217-123-4567      
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 q-mt-lg text-center">
+        <q-img 
+          :src="getImageUrl('assets/building-images/building_1.jpg')" 
+          style="border-radius: 50%; width:25vw; height:25vw;"
+          />
+      </div>
+    </div>
+    <q-footer class="" style="background-color:#000000">
+        <q-toolbar>
+          <q-toolbar-title>Footer</q-toolbar-title>
+        </q-toolbar>
+    </q-footer>
   </q-layout>
-  
 </template>
 
 
