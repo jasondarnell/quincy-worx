@@ -36,7 +36,7 @@
     </q-header>
     <q-page-container class="relative-position" style="height: 500px;">
       <img 
-        :src="getImageUrl('assets/building-images/building_10.jpg')" 
+        src="~assets/building-images/building_10.jpg" 
         class="absolute-position darken" 
         style="width: 100%; height: 100%;" 
         />
@@ -46,13 +46,13 @@
       <div class="col-md-1" />
       <div class="col-md-4 q-mt-lg text-center">
         <q-img 
-          :src="getImageUrl('assets/building-images/building_11.jpg')" 
+          src="~assets/building-images/building_11.jpg"
           style="border-radius: 50%; width:22vw; height:22vw;"
           />
       </div>
       <div class="col-md-6 q-mt-lg">
         <div class="text-center">
-          <p class="text-h5 " >
+          <p class="text-h5" >
             Quincy Worx Amenities
           </p>
           <p>
@@ -103,7 +103,7 @@
           >
             <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" />
           </q-carousel-slide>
-        </q-carousel> -->
+        </q-carousel> 
 
         <div class="row justify-center">
           <q-btn-toggle glossy v-model="slide" :options="toggleOptions" />
@@ -134,7 +134,7 @@
           />
       </div>
     </div>
-    <v-row>
+    <div class="row">
       <q-toolbar style="background-color:#222222; color: white;">
         <q-space />
         <span class="text-caption">
@@ -147,7 +147,7 @@
           </q-btn>
           <!-- <q-icon name="cancel" color="white" /> -->
       </q-toolbar>
-    </v-row>
+    </div>
   </q-layout>
 </template>
 
@@ -180,6 +180,7 @@ export default defineComponent({
         }
       ],
       slide: ref('building_1'),
+      slide2: ref(1),
       lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo provident incidunt ducimus iusto perferendis porro earum. Totam, numquam?'
     }
   },
