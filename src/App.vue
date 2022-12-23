@@ -15,26 +15,26 @@
           <q-btn flat @click="goTo('memberships')">
             Memberships
           </q-btn>
-          <q-btn flat>
+          <q-btn fla  @click="goTo('contact')">
             Contact
           </q-btn>
           <q-separator vertical />
-          <q-btn flat>
+          <q-btn flat href="https://www.coworkify.com/quincyworx">
             Member Login
           </q-btn>
         </q-toolbar>
         <br />
         <div class="text-center text-h3 q-ma-lg">
-          Quincy's Premiere Coworking Space
+          <b>Quincy's Premiere Coworking Space</b>
         </div>
         <br />
         <div class="text-center q-ma-lg ">
-          <q-btn class="q-px-xl" size="lg" style="background: #FBA504" rounded>
+          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504" rounded>
               <span class="text-subtitle1" style="text-transform: none">Join Now</span>
           </q-btn>
         </div>
     </q-header>
-    <q-page-container class="relative-position" style="height: 500px;">
+    <q-page-container class="relative-position" style="height: 70vh;">
       <img 
         src="~assets/building-images/building_10.jpg" 
         class="absolute-position darken" 
@@ -42,7 +42,9 @@
         />
     </q-page-container>
 
-    <div class="row q-ma-lg" ref="about">
+    <hr class="hr" />
+
+    <div class="row q-pa-lg" ref="about"  style="background: #FFFFFF">
       <div class="col-md-1" />
       <div class="col-md-4 q-mt-lg text-center">
         <q-img 
@@ -56,7 +58,7 @@
             About Quincy Worx
           </p>
           <p>
-            Quincy Worx provides a flexible solution for professionals looking for a better alternative work environment, collaboration, networking, increased creativity, and amenities to promote high productivity for success. 
+            Quincy Worx provides a flexible solution for professionals looking for a better alternative work environment, collaboration, networking, increased creativity, and amenities to promote high productivity for success. TODO update
           </p>
           <p>
             Amenities include:
@@ -94,153 +96,177 @@
       </div>
       <div class="col-md-1" />
     </div>
-    <div class="row" ref="gallery">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <q-carousel
-          v-model="slide"
-          transition-prev="slide-right"
-          transition-next="slide-left"
-          animated
-          navigation
-          control-type="flat"
-          control-color="grey"
-          class="rounded-borders q-mx-lg"
-        >
-          <q-carousel-slide
-            v-for="slideImage in slideImages"
-            :key="slideImage.name"
-            :name="slideImage.name"
-            class="column no-wrap flex-center q-pt-none"
-          >
-            <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" />
-          </q-carousel-slide>
-        </q-carousel> 
 
-        <!-- <div class="row justify-center">
-          <q-btn-toggle glossy v-model="slide" :options="toggleOptions" />
-        </div> -->
-      </div>
-      <div class="col-3"></div>
-    </div>
     <hr class="hr" />
-    <div class="row text-center q-mt-lg" ref="memberships">
-      <q-space />
-      <div class="col-md-6">
-          <span class="text-h6" style="color:#5B6770">OPTIONS FOR GROWING TEAMS</span> <br />
-          At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from private offices to shared workspace. All members have access to extensive amenities and services, specifically created with entrepreneurs in mind, so you can focus on the important things.
+
+    <div style="background: #FAFAFA" ref="gallery">
+      <div class="text-center q-pa-lg text-h5">
+        <b>Gallery</b>
       </div>
-      <q-space />
-    </div>
-    <div class="text-center q-mt-lg text-h5" style="color:#5B6770">
-      Memberships
-    </div>
-    <div class="row q-ma-lg">
-        <div class="col">
-          <q-card class="q-ma-md membership-card">
-            <q-card-section class="membership-card-header">
-              <div class="text-h6">Day Pass</div>
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="text-center text-h6">
-              $15 / Day
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="membership-card-details">
-              8 AM - 5 PM weekday access <br />
-              Open Seating in the Business Lounge <br />
-              High Speed Wifi  <br />    
-            </q-card-section>
-          </q-card>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <q-carousel
+                v-model="slide"
+                transition-prev="slide-right"
+                transition-next="slide-left"
+                animated
+                navigation
+                padding
+                arrows
+                control-type="flat"
+                control-color="grey"
+                class="rounded-borders q-mx-lg"
+                 style="background: #FAFAFA"
+              >
+                <q-carousel-slide
+                  v-for="slideImage in slideImages"
+                  :key="slideImage.name"
+                  :name="slideImage.name"
+                  class="column no-wrap flex-center q-pt-none"
+                >
+                  <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" />
+                </q-carousel-slide>
+              </q-carousel> 
+
+              <!-- <div class="row justify-center">
+                <q-btn-toggle glossy v-model="slide" :options="toggleOptions" />
+              </div> -->
+            </div>
+            <div class="col-2"></div>
+          </div>
+    </div>        
+    
+    <hr class="hr" />
+
+    <div style="background: #FFFFFF">
+      <div class="row text-center q-pt-lg" ref="memberships">
+          <q-space />
+          <div class="col-md-6">
+              <span class="text-h6" style="color:#5B6770">OPTIONS FOR GROWING TEAMS</span> <br />
+              At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from private offices to shared workspace. All members have access to extensive amenities and services, specifically created with entrepreneurs in mind, so you can focus on the important things. TODO: update this.
+          </div>
+          <q-space />
         </div>
-        <div class="col">
-          <q-card class="q-ma-md membership-card">
-            <q-card-section class="membership-card-header">
-              <div class="text-h6">Flex Worx</div>
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="text-center text-h6">
-              $150 / Month
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="membership-card-details">
-              8 AM - 5 PM Weekday Access <br />
-              Open Seating in the Business Lounge <br />
-              High Speed Wifi  <br />
-              <br />
-               4 Conference Room Hours / Month <br />
-            </q-card-section>
-          </q-card>
+        <div class="text-center q-mt-lg text-h5" style="color:#5B6770;">
+          Memberships
         </div>
-        <div class="col">
-          <q-card class="q-ma-md membership-card">
-            <q-card-section class="membership-card-header">
-              <div class="text-h6">Pro Worx</div>
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="text-center text-h6">
-              $200 / Month
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="membership-card-details">
-              24/7 Building Access<br />
-              Open Seating in the Business Lounge <br />
-              High Speed Wifi  <br />  
-              <br />
-               10 Conference Room Hours / Month <br />
-            </q-card-section>
-            <q-card-actions align="center">
-              <q-btn>
-                Learn More
-              </q-btn>
-            </q-card-actions>
-          </q-card>
-        </div>
-        <div class="col">
-          <q-card class="q-ma-md membership-card">
-            <q-card-section class="membership-card-header">
-              <div class="text-h6">Private Office</div>
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="text-center">
-              <span style="color:#5B6770;">Small Office</span> <br />
-              <span class="text-h6">$400 / Month</span> <br />
-              <span style="color:#5B6770;">Lakeview Office</span> <br />
-              <span class="text-h6">$600 / Month</span> <br />
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="membership-card-details">
-              24/7 Building Access<br />
-              Access to Kitchen and Business Lounge <br />
-              High Speed Wifi  <br />    
-              <br />
-              4 Conference Room Hours / Month <br />
-            </q-card-section>
-          </q-card>
+        <div class="row q-pa-lg">
+            <div class="col">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Day Pass</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $15 / Day
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  8 AM - 5 PM weekday access <br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />    
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Flex Worx</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $150 / Month
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  8 AM - 5 PM Weekday Access <br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />
+                  <br />
+                  4 Conference Room Hours / Month <br />
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Pro Worx</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $200 / Month
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  24/7 Building Access<br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />  
+                  <br />
+                  10 Conference Room Hours / Month <br />
+                </q-card-section>
+                <!-- <q-card-actions align="center">
+                  <q-btn>
+                    Learn More
+                  </q-btn>
+                </q-card-actions> -->
+              </q-card>
+            </div>
+            <div class="col">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Private Office</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span style="color:#5B6770;">Small Office</span> <br />
+                  <span class="text-h6">$400 / Month</span> <br />
+                  <span style="color:#5B6770;">Lakeview Office</span> <br />
+                  <span class="text-h6">$600 / Month</span> <br />
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  24/7 Building Access<br />
+                  Access to Kitchen and Business Lounge <br />
+                  High Speed Wifi  <br />    
+                  <br />
+                  4 Conference Room Hours / Month <br />
+                </q-card-section>
+              </q-card>
+            </div>
         </div>
     </div>
     <br />
     <hr class="hr" />
-    <div class="row q-ma-lg" ref="contact">
+    <!-- <div class="row text-h4" id="schedule-tour-row">
+      <span id=""><b>Schedule a tour</b> to explore our facility.</span>
+    </div> -->
+    <div class="row q-ma-xl" ref="contact">
       <div class="col-md-6">
-        <div class="q-ma-lg">
+        <div class="">
           <p class="text-h5 text-center" >
-            Quincy Worx
+            Contact 
           </p>
-          <p class="text-subtitle1 q-ma-xl">
-            3701 East Lake Center <br />
-            Suite 1 <br />
+          <p class="text-subtitle1">
+            3701 East Lake Center, Suite 1 <br />
             Quincy, Illinois <br /> 
             62305 <br />
             <br />
-            Phone: 217-123-4567      
+            <q-icon name="phone" /> 217-123-4567  
+            <br />
+            <q-icon name="email" />info@quincyworx.com
           </p>
+        </div>
+        <div class="text-center">
+          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504; color: white" rounded>
+              <span class="text-subtitle1" style="text-transform: none">Join Now</span>
+          </q-btn>
         </div>
       </div>
       <div class="col-md-6 text-center">
         <q-img 
           :src="getImageUrl('assets/building-images/building_1.jpg')" 
-          style="border-radius: 50%; width:25vw; height:25vw;"
+         
           />
       </div>
     </div>
@@ -248,13 +274,13 @@
       <q-toolbar style="background-color:#222222; color: white;">
         <q-space />
         <span class="text-caption">
-          Copyright © 2022 - Quincy Worx
+          Copyright © {{currYear}} - Quincy Worx
         </span>
         <q-space />
 
-          <q-btn flat size="sm">
+          <!-- <q-btn flat size="sm">
             Member Login
-          </q-btn>
+          </q-btn> -->
           <!-- <q-icon name="cancel" color="white" /> -->
       </q-toolbar>
     </div>
@@ -318,8 +344,6 @@ export default defineComponent({
         }
       ],
       slide: ref('building_1'),
-      slide2: ref(1),
-      lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo provident incidunt ducimus iusto perferendis porro earum. Totam, numquam?'
     }
   },
   computed: {
@@ -330,6 +354,10 @@ export default defineComponent({
           value: slideImage.name
         }
       })
+    },
+    currYear(){
+      const d = new Date();
+      return d.getFullYear().toString();
     }
   },
   methods: {
@@ -339,6 +367,9 @@ export default defineComponent({
             block: 'start',
             inline: 'start'
         })
+    },
+    login(){
+      
     }
   }
 })
@@ -357,7 +388,7 @@ export default defineComponent({
     filter: brightness(40%);
   }
 
-    .relative-position {
+  .relative-position {
     position: relative;
   }
   .absolute-position {
@@ -385,6 +416,8 @@ export default defineComponent({
 
   .hr {
     border-top: 1px solid #E5E5E5;
+    margin-top:0px;
+    margin-bottom:0px;
   }
 
 </style>
