@@ -15,7 +15,7 @@
           <q-btn flat @click="goTo('memberships')">
             Memberships
           </q-btn>
-          <q-btn fla  @click="goTo('contact')">
+          <q-btn flat  @click="goTo('contact')">
             Contact
           </q-btn>
           <q-separator vertical />
@@ -29,7 +29,7 @@
         </div>
         <br />
         <div class="text-center q-ma-lg ">
-          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504" rounded>
+          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504" rounded @click="joinNow">
               <span class="text-subtitle1" style="text-transform: none">Join Now</span>
           </q-btn>
         </div>
@@ -254,11 +254,11 @@
             <br />
             <q-icon name="phone" /> 217-123-4567  
             <br />
-            <q-icon name="email" />info@quincyworx.com
+            <q-icon name="email" /> info@quincyworx.com
           </p>
         </div>
         <div class="text-center">
-          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504; color: white" rounded>
+          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504; color: white" rounded @click="joinNow">
               <span class="text-subtitle1" style="text-transform: none">Join Now</span>
           </q-btn>
         </div>
@@ -368,8 +368,8 @@ export default defineComponent({
             inline: 'start'
         })
     },
-    login(){
-      
+    joinNow(){
+      alert("TODO: Join now.") 
     }
   }
 })
