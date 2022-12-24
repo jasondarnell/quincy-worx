@@ -20,4 +20,4 @@ jobs:
         run: npm i
 
       - name: Build
-        run: quasar build
+        run: npm i @quasar/cli && quasar build
