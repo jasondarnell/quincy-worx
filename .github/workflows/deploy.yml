@@ -22,14 +22,14 @@ jobs:
       - name: Build
         run:  quasar build
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: dist
-        path: dist/spa
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist/spa
 
-    - name: Create or Update gh-pages branch
-      uses: actions/create-or-update-branch@v1
-      with:
-        branch: gh-pages
-        artifact_patterns: dist/*
+      - name: Create or Update gh-pages branch
+        uses: actions/create-or-update-branch@v1
+        with:
+          branch: gh-pages
+          artifact_patterns: dist/*
