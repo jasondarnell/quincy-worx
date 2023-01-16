@@ -1,12 +1,10 @@
 name: Deploy
 
-
 on:
   push:
     branches: [ "master" ]
 
   workflow_dispatch:
-
 
 jobs:
   deploy:
@@ -21,15 +19,9 @@ jobs:
 
       - name: Build
         run:  quasar build
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: dist
-          path: dist/spa
-
-      - name: Create or Update gh-pages branch
-        uses: actions/create-or-update-branch@v1
-        with:
-          branch: gh-pages
-          artifact_patterns: dist/*
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/spa
