@@ -125,7 +125,8 @@
                   :name="slideImage.name"
                   class="column no-wrap flex-center q-pt-none"
                 >
-                  <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" />
+                  <!-- <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" /> -->
+                  <q-img :src="'~' + slideImage.src" spinner-color="white" />
                 </q-carousel-slide>
               </q-carousel> 
 
@@ -265,8 +266,7 @@
       </div>
       <div class="col-md-6 text-center">
         <q-img 
-          :src="getImageUrl('assets/building-images/building_1.jpg')" 
-         
+          src="~assets/building-images/building_1.jpg" 
           />
       </div>
     </div>
@@ -292,15 +292,15 @@
 import { defineComponent, ref } from 'vue'
 
 
-const getImageUrl = (url) => {
-      return new URL(url, import.meta.url).href
-  }
+// const getImageUrl = (url) => {
+//       return new URL(url, import.meta.url).href
+//   }
 
 export default defineComponent({
   name: 'App',
   setup(){
     return {
-      getImageUrl,
+      // getImageUrl,
       slideImages:[
         {
           name: "building_1",
