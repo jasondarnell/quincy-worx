@@ -2,7 +2,7 @@
     <q-layout >
     <q-header class="q-pa-md transparent">
       <!-- Navbar content goes here -->
-        <q-toolbar id="topnav">
+        <q-toolbar class="mobile-hide">
           <q-toolbar-title class="text-h5" style="font-family:Nunito">
             Quincy Worx
           </q-toolbar-title>
@@ -51,7 +51,7 @@
     <hr class="hr" />
 
     <div class="row q-pa-lg justify-center" ref="about"  style="background: #FFFFFF">
-      <div class="col-md-4 col-sm-12 q-mt-lg">
+      <div class="col-md-4 col-sm-12 q-mt-lg mobile-hide">
         <div class="justify-center">
         <q-img 
           src="~assets/building-images/building_11.jpg"
@@ -65,7 +65,7 @@
             About Quincy Worx
           </p>
           <p>
-            Quincy Worx provides a flexible solution for professionals looking for a better alternative work environment, collaboration, networking, increased creativity, and amenities to promote high productivity for success. TODO update
+            Quincy Worx provides a flexible solution for professionals looking for a better alternative work environment, collaboration, networking, increased creativity, and amenities to promote high productivity for success. TODO: update.
           </p>
           <p>
             Amenities include:
@@ -105,9 +105,9 @@
 
     <hr class="hr" />
 
-    <div style="background: #FAFAFA" ref="gallery">
+    <div style="background: #FAFAFA" ref="gallery" class="mobile-hide">
       <div class="text-center q-pa-lg text-h5">
-        <b>Gallery</b>
+        Gallery
       </div>
           <div class="row justify-center">
             <div class="col-md-8">
@@ -148,15 +148,15 @@
       <div class="row text-center q-pt-lg" ref="memberships">
           <q-space />
           <div class="col-md-6">
-              <span class="text-h6" style="color:#5B6770">OPTIONS FOR GROWING TEAMS</span> <br />
-              At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from private offices to shared workspace. All members have access to extensive amenities and services, specifically created with entrepreneurs in mind, so you can focus on the important things. TODO: update this.
+              <span class="text-h6" >Options For Growing Teams</span> <br />
+              At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from private offices to shared workspace. All members have access to extensive amenities and services, specifically created with entrepreneurs in mind, so you can focus on the important things. TODO: update.
           </div>
           <q-space />
         </div>
-        <div class="text-center q-mt-lg text-h5" style="color:#5B6770;">
+        <div class="text-center q-mt-lg text-h5">
           Memberships
         </div>
-        <div class="row q-pa-lg">
+        <div class="row q-pa-md">
             <div class="col-md-3 col-sm-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
@@ -294,12 +294,13 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-
+// import { useQuasar } from 'quasar'
 
 // const getImageUrl = (url) => {
 //       return new URL(url, import.meta.url).href
 //   }
 
+// const $q = useQuasar()
 
 export default defineComponent({
   name: 'App',
@@ -447,9 +448,6 @@ export default defineComponent({
           content: url("assets/building-images/building_5_cropped.jpg") !important;
 
      }
-    #topnav {
-      display: none;
-    }
   }
 
 </style>
