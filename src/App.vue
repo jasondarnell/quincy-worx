@@ -317,31 +317,31 @@ export default defineComponent({
         },
         {
           name: "building_4",
-          src: "assets/building-images/building_4.jpg"
+          src: new URL("assets/building-images/building_4.jpg", import.meta.url)
         },
         {
           name: "building_5",
-          src: "assets/building-images/building_5.jpg"
+          src: new URL("assets/building-images/building_5.jpg", import.meta.url)
         },
         {
           name: "building_6",
-          src: "assets/building-images/building_6.jpg"
+          src: new URL("assets/building-images/building_6.jpg", import.meta.url)
         },
         {
           name: "building_7",
-          src: "assets/building-images/building_7.jpg"
+          src: new URL("assets/building-images/building_7.jpg", import.meta.url)
         },
         {
           name: "building_8",
-          src: "assets/building-images/building_8.jpg"
+          src: new URL("assets/building-images/building_8.jpg", import.meta.url)
         },
         {
           name: "building_9",
-          src: "assets/building-images/building_9.jpg"
+          src: new URL("assets/building-images/building_9.jpg", import.meta.url)
         },
         {
           name: "building_10",
-          src: "assets/building-images/building_10.jpg"
+          src: new URL("assets/building-images/building_10.jpg", import.meta.url)
         }
       ],
       slide: ref('building_1'),
