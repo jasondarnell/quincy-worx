@@ -126,7 +126,7 @@
                   class="column no-wrap flex-center q-pt-none"
                 >
                   <!-- <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" /> -->
-                  <q-img :src="'~' + slideImage.src" spinner-color="white" />
+                  <q-img :src="slideImage.src" spinner-color="white" />
                 </q-carousel-slide>
               </q-carousel> 
 
@@ -296,6 +296,7 @@ import { defineComponent, ref } from 'vue'
 //       return new URL(url, import.meta.url).href
 //   }
 
+
 export default defineComponent({
   name: 'App',
   setup(){
@@ -304,15 +305,15 @@ export default defineComponent({
       slideImages:[
         {
           name: "building_1",
-          src: "assets/building-images/building_1.jpg"
+          src: new URL("assets/building-images/building_1.jpg", import.meta.url)
         },
         {
           name: "building_2",
-          src: "assets/building-images/building_2.jpg"
+          src: new URL("assets/building-images/building_2.jpg", import.meta.url)
         },
         {
           name: "building_3",
-          src: "assets/building-images/building_3.jpg"
+          src: new URL("assets/building-images/building_3.jpg", import.meta.url)
         },
         {
           name: "building_4",
