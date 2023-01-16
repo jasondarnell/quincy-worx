@@ -2,7 +2,7 @@
     <q-layout >
     <q-header class="q-pa-md transparent">
       <!-- Navbar content goes here -->
-        <q-toolbar>
+        <q-toolbar id="topnav">
           <q-toolbar-title class="text-h5" style="font-family:Nunito">
             Quincy Worx
           </q-toolbar-title>
@@ -35,22 +35,29 @@
         </div>
     </q-header>
     <q-page-container class="relative-position" style="height: 70vh;">
+              <!-- src="~assets/building-images/building_10.jpg"  -->
+<!-- 
       <img 
-        src="~assets/building-images/building_10.jpg" 
+        id="hero"
         class="absolute-position darken" 
         style="width: 100%; height: 100%;" 
-        />
+        /> -->
+
+      <img 
+        id="hero"
+      />
     </q-page-container>
 
     <hr class="hr" />
 
-    <div class="row q-pa-lg" ref="about"  style="background: #FFFFFF">
-      <div class="col-md-1" />
-      <div class="col-md-4 q-mt-lg text-center">
+    <div class="row q-pa-lg justify-center" ref="about"  style="background: #FFFFFF">
+      <div class="col-md-4 col-sm-12 q-mt-lg">
+        <div class="justify-center">
         <q-img 
           src="~assets/building-images/building_11.jpg"
           style="border-radius: 50%; width:22vw; height:22vw;"
           />
+        </div>
       </div>
       <div class="col-md-6 q-mt-lg">
         <div class="text-center">
@@ -94,7 +101,6 @@
             </div>
         </div> -->
       </div>
-      <div class="col-md-1" />
     </div>
 
     <hr class="hr" />
@@ -103,9 +109,8 @@
       <div class="text-center q-pa-lg text-h5">
         <b>Gallery</b>
       </div>
-          <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
+          <div class="row justify-center">
+            <div class="col-md-8">
               <q-carousel
                 v-model="slide"
                 transition-prev="slide-right"
@@ -134,7 +139,6 @@
                 <q-btn-toggle glossy v-model="slide" :options="toggleOptions" />
               </div> -->
             </div>
-            <div class="col-2"></div>
           </div>
     </div>        
     
@@ -153,7 +157,7 @@
           Memberships
         </div>
         <div class="row q-pa-lg">
-            <div class="col">
+            <div class="col-md-3 col-sm-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Day Pass</div>
@@ -170,7 +174,7 @@
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col">
+            <div class="col-md-3 col-sm-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Flex Worx</div>
@@ -189,7 +193,7 @@
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col">
+            <div class="col-md-3 col-sm-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Pro Worx</div>
@@ -213,7 +217,7 @@
                 </q-card-actions> -->
               </q-card>
             </div>
-            <div class="col">
+            <div class="col-md-3 col-sm-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Private Office</div>
@@ -303,10 +307,10 @@ export default defineComponent({
     return {
       // getImageUrl,
       slideImages:[
-        {
-          name: "building_1",
-          src: new URL("assets/building-images/building_1.jpg", import.meta.url)
-        },
+        // {
+        //   name: "building_1",
+        //   src: new URL("assets/building-images/building_1.jpg", import.meta.url)
+        // },
         {
           name: "building_2",
           src: new URL("assets/building-images/building_2.jpg", import.meta.url)
@@ -344,7 +348,7 @@ export default defineComponent({
           src: new URL("assets/building-images/building_10.jpg", import.meta.url)
         }
       ],
-      slide: ref('building_1'),
+      slide: ref('building_2'),
     }
   },
   computed: {
@@ -385,21 +389,21 @@ export default defineComponent({
     min-height: 90vh;  
   }
 
-  .darken {
+  /* .darken {
     filter: brightness(40%);
-  }
+  } */
 
   .relative-position {
     position: relative;
   }
-  .absolute-position {
+  /* .absolute-position {
     position: absolute;
     top: 0;
     left: 0;
-  }
+  } */
 
   .membership-card {
-    height: 100%
+    height: 100%;
   }
 
   .membership-card-header {
@@ -419,6 +423,33 @@ export default defineComponent({
     border-top: 1px solid #E5E5E5;
     margin-top:0px;
     margin-bottom:0px;
+  }
+
+
+  #hero {
+    background-image: url("assets/building-images/building_10.jpg");
+    width: 100%; 
+    height: 100%;
+    filter: brightness(40%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media 
+  only screen and (max-width: 767px)  {
+    #hero{
+          filter: brightness(40%);
+          width: 100%; 
+          height: 100% !important;
+          content: url("assets/building-images/building_5_cropped.jpg") !important;
+
+     }
+    #topnav {
+      display: none;
+    }
   }
 
 </style>
