@@ -6,8 +6,8 @@
           <q-toolbar-title class="text-h5" style="font-family:Nunito">
             Quincy Worx
           </q-toolbar-title>
-          <q-btn flat @click="goTo('about')">
-            About
+          <q-btn flat @click="goTo('amenities')">
+            Amenities
           </q-btn>
           <q-btn flat @click="goTo('gallery')">
             Gallery
@@ -29,7 +29,14 @@
         </div>
         <br />
         <div class="text-center q-ma-lg ">
-          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504" rounded @click="joinNow">
+          <q-btn 
+          class="q-px-xl q-my-md" 
+          size="lg"
+          style="background: #FBA504" 
+          rounded 
+          @click="joinNow"
+          href="javascript:void( window.open( 'https://form.jotform.com/230198256255156', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )"
+          >
               <span class="text-subtitle1" style="text-transform: none">Join Now</span>
           </q-btn>
         </div>
@@ -50,7 +57,7 @@
 
     <hr class="hr" />
 
-    <div class="row q-pa-lg justify-center" ref="about"  style="background: #FFFFFF">
+    <div class="row q-pa-lg justify-center"  style="background: #FAFAFA">
       <div class="col-md-4 col-sm-12 q-mt-lg mobile-hide">
         <div class="justify-center">
         <q-img 
@@ -61,46 +68,141 @@
       </div>
       <div class="col-md-6 q-mt-lg">
         <div class="text-center">
-          <p class="text-h5" >
-            About Quincy Worx
+          <p class="text-h4" >
+            We are a cowork space with incredibile amenities, flexible plans, and an unmatched experience. TODO: update.
           </p>
           <p>
             Quincy Worx provides a flexible solution for professionals looking for a better alternative work environment, collaboration, networking, increased creativity, and amenities to promote high productivity for success. TODO: update.
           </p>
-          <p>
-            Amenities include:
-          </p>
         </div>
-        <div class="row">
-            <q-space />
-            <div class="col-md-8">
-              <ul class="q-ml-md">
-                <li>Super-Fast Internet Access</li>
-                <li>Open seating with meeting/work tables, comfortable booths, and relaxing chairs.</li>
-                <li>Printer, Copier, Scanner</li>
-                <li>Electric Fountain Brewery Coffee, Tea, Water</li>
-                <li>Fridge</li>
-                <li>Kitchen</li>
-                <li>Microwave</li>
-              </ul>
-            </div>
-            <q-space />
-        </div>
-        <!-- <div class="row">
-            <div class="col-md-6">
-              <ul class="q-ml-md">
-                <li>Internet Access</li>
-                <li>Printer, Copier, Scanner</li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul class="q-ml-md">
-                <li>Conference Room</li>
-                <li> Electric Fountain Brewery Coffee</li>
-              </ul>
-            </div>
-        </div> -->
       </div>
+    </div>
+
+    <hr class="hr" />
+
+    <div ref="amenities" class="justify-center  amenity-icon q-pa-md" style="background: #F1F2F2; ">
+      <div class="row justify-center text-h5  q-pa-lg">
+          Amenities
+      </div>
+  
+  <div class="row text-center q-pa-lg justify-center" >
+      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+        <q-icon name="wifi" size="lg" class="amenity-icon"/> <br />
+        Super-Fast Internet
+      </div>
+      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+        <q-icon name="chair" size="lg"/> <br />
+        Open Seating
+      </div>
+      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+        <q-icon name="coffee" size="lg"/> <br />
+        Free Coffee, Snacks, and Beverages
+      </div>
+      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+        <q-icon name="restaurant" size="lg"/> <br />
+       Shared Kitchen
+      </div>
+      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+        <q-icon name="print" size="lg"/> <br />
+        Printer, Copier, Scanner
+      </div>
+    </div>
+
+    </div>
+
+  
+    <hr class="hr" />
+
+    <div style="background: #FFFFFF" class="q-ma-lg">
+      <div class="row text-center" ref="memberships">
+          <q-space />
+          <div class="col-md-6">
+              <span class="text-h6" >Options For Growing Teams</span> <br />
+              At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from private offices to shared workspace. All members have access to extensive amenities and services, specifically created with entrepreneurs in mind, so you can focus on the important things. TODO: update.
+          </div>
+          <q-space />
+        </div>
+        <div class="text-center q-mt-lg text-h5">
+          Memberships
+        </div>
+        <div class="row q-pa-md">
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Day Pass</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $15 / Day
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  8 AM - 5 PM weekday access <br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />    
+                  Unlimited Coffee, Beverages, and Snacks  <br /> 
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">The Worx</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $100 / Month
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  8 AM - 5 PM Weekday Access <br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />
+                  Unlimited Coffee, Beverages, and Snacks  <br /> 
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Pro Worx</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $200 / Month
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  All Amenitites<br />
+                  24/7 Building Access<br />
+                  Conference Room Availability <br />
+                </q-card-section>
+                <!-- <q-card-actions align="center">
+                  <q-btn>
+                    Learn More
+                  </q-btn>
+                </q-card-actions> -->
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Private Office</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span style="color:#5B6770;">Starting At</span> <br />
+                  <span class="text-h6">$400 / Month</span> <br />
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  All Amenitites<br />
+                  24/7 Building Access<br />
+                  Conference Room Availability <br />
+                </q-card-section>
+              </q-card>
+            </div>
+        </div>
     </div>
 
     <hr class="hr" />
@@ -141,137 +243,40 @@
             </div>
           </div>
     </div>        
-    
-    <hr class="hr" />
 
-    <div style="background: #FFFFFF">
-      <div class="row text-center q-pt-lg" ref="memberships">
-          <q-space />
-          <div class="col-md-6">
-              <span class="text-h6" >Options For Growing Teams</span> <br />
-              At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from private offices to shared workspace. All members have access to extensive amenities and services, specifically created with entrepreneurs in mind, so you can focus on the important things. TODO: update.
-          </div>
-          <q-space />
-        </div>
-        <div class="text-center q-mt-lg text-h5">
-          Memberships
-        </div>
-        <div class="row q-pa-md">
-            <div class="col-md-3 col-sm-12 q-my-sm">
-              <q-card class="q-ma-md membership-card">
-                <q-card-section class="membership-card-header">
-                  <div class="text-h6">Day Pass</div>
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="text-center text-h6">
-                  $15 / Day
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="membership-card-details">
-                  8 AM - 5 PM weekday access <br />
-                  Open Seating in the Business Lounge <br />
-                  High Speed Wifi  <br />    
-                </q-card-section>
-              </q-card>
-            </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
-              <q-card class="q-ma-md membership-card">
-                <q-card-section class="membership-card-header">
-                  <div class="text-h6">Flex Worx</div>
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="text-center text-h6">
-                  $150 / Month
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="membership-card-details">
-                  8 AM - 5 PM Weekday Access <br />
-                  Open Seating in the Business Lounge <br />
-                  High Speed Wifi  <br />
-                  <br />
-                  4 Conference Room Hours / Month <br />
-                </q-card-section>
-              </q-card>
-            </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
-              <q-card class="q-ma-md membership-card">
-                <q-card-section class="membership-card-header">
-                  <div class="text-h6">Pro Worx</div>
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="text-center text-h6">
-                  $200 / Month
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="membership-card-details">
-                  24/7 Building Access<br />
-                  Open Seating in the Business Lounge <br />
-                  High Speed Wifi  <br />  
-                  <br />
-                  10 Conference Room Hours / Month <br />
-                </q-card-section>
-                <!-- <q-card-actions align="center">
-                  <q-btn>
-                    Learn More
-                  </q-btn>
-                </q-card-actions> -->
-              </q-card>
-            </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
-              <q-card class="q-ma-md membership-card">
-                <q-card-section class="membership-card-header">
-                  <div class="text-h6">Private Office</div>
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="text-center">
-                  <span style="color:#5B6770;">Small Office</span> <br />
-                  <span class="text-h6">$400 / Month</span> <br />
-                  <span style="color:#5B6770;">Lakeview Office</span> <br />
-                  <span class="text-h6">$600 / Month</span> <br />
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="membership-card-details">
-                  24/7 Building Access<br />
-                  Access to Kitchen and Business Lounge <br />
-                  High Speed Wifi  <br />    
-                  <br />
-                  4 Conference Room Hours / Month <br />
-                </q-card-section>
-              </q-card>
-            </div>
-        </div>
-    </div>
-    <br />
     <hr class="hr" />
     <!-- <div class="row text-h4" id="schedule-tour-row">
       <span id=""><b>Schedule a tour</b> to explore our facility.</span>
     </div> -->
-    <div class="row q-ma-xl" ref="contact">
-      <div class="col-md-6">
-        <div class="">
-          <p class="text-h5 text-center" >
-            Contact 
-          </p>
-          <p class="text-subtitle1">
-            3701 East Lake Center, Suite 1 <br />
-            Quincy, Illinois <br /> 
-            62305 <br />
-            <br />
-            <q-icon name="phone" /> 217-123-4567  
-            <br />
-            <q-icon name="email" /> info@quincyworx.com
-          </p>
+    <div style="">
+      <div class="row q-pa-xl" ref="contact" >
+        <div class="col-md-6">
+          <div class="">
+            <p class="text-h5 text-center" >
+              Contact 
+            </p>
+            <p class="text-subtitle1">
+              3701 East Lake Center, Suite 1 <br />
+              Quincy, Illinois <br /> 
+              62305 <br />
+              <br />
+              <q-icon name="phone" /> 217-123-4567  
+              <br />
+              <q-icon name="email" /> info@quincyworx.com
+            </p>
+          </div>
+          <div class="text-center">
+            <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504; color: white" rounded @click="joinNow" href="javascript:void( window.open( 'https://form.jotform.com/230198256255156', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )">
+                <span class="text-subtitle1" style="text-transform: none">Join Now</span>
+            </q-btn>
+
+          </div>
         </div>
-        <div class="text-center">
-          <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504; color: white" rounded @click="joinNow">
-              <span class="text-subtitle1" style="text-transform: none">Join Now</span>
-          </q-btn>
+        <div class="col-md-6 text-center">
+          <q-img 
+            src="~assets/building-images/building_1.jpg" 
+            />
         </div>
-      </div>
-      <div class="col-md-6 text-center">
-        <q-img 
-          src="~assets/building-images/building_1.jpg" 
-          />
       </div>
     </div>
     <div class="row">
@@ -288,6 +293,13 @@
           <!-- <q-icon name="cancel" color="white" /> -->
       </q-toolbar>
     </div>
+
+    <!-- <q-dialog v-model="joinDialog">
+      <div class="row q-ma-lg">
+        <iframe id="JotFormIFrame-230198256255156" title="Join Quincy Worx" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/230198256255156" frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no" > </iframe>
+      </div>
+    </q-dialog> -->
+
   </q-layout>
 </template>
 
@@ -307,6 +319,7 @@ export default defineComponent({
   setup(){
     return {
       // getImageUrl,
+      joinDialog: ref(false),
       slideImages:[
         // {
         //   name: "building_1",
@@ -375,10 +388,16 @@ export default defineComponent({
         })
     },
     joinNow(){
-      alert("TODO: Join now.") 
+      // this.joinDialog = true;
+      // window.open( 'https://form.jotform.com/230198256255156', 'scrollbars=yes, toolbar=no, width=700, height=500' )
     }
   }
 })
+
+
+let iframe;
+let handleIFrameMessage;
+let ifr = document.getElementById("JotFormIFrame-230198256255156"); if (ifr) { var src = ifr.src; var iframeParams = []; if (window.location.href && window.location.href.indexOf("?") > -1) { iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&')); } if (src && src.indexOf("?") > -1) { iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&")); src = src.substr(0, src.indexOf("?")) } iframeParams.push("isIframeEmbed=1"); ifr.src = src + "?" + iframeParams.join('&'); } window.handleIFrameMessage = function(e) { if (typeof e.data === 'object') { return; } var args = e.data.split(":"); if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); } if (!iframe) { return; } switch (args[0]) { case "scrollIntoView": iframe.scrollIntoView(); break; case "setHeight": iframe.style.height = args[1] + "px"; if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) { iframe.style.minHeight = args[1] + "px"; } break; case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break; case "reloadPage": window.location.reload(); break; case "loadScript": if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; } var src = args[1]; if (args.length > 3) { src = args[1] + ':' + args[2]; } var script = document.createElement('script'); script.src = src; script.type = 'text/javascript'; document.body.appendChild(script); break; case "exitFullscreen": if (window.document.exitFullscreen) window.document.exitFullscreen(); else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen(); else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen(); else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen(); else if (window.document.msExitFullscreen) window.document.msExitFullscreen(); break; } var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false; if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } }; window.isPermitted = function(originUrl, whitelisted_domains) { var url = document.createElement('a'); url.href = originUrl; var hostname = url.hostname; var result = false; if( typeof hostname !== 'undefined' ) { whitelisted_domains.forEach(function(element) { if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element ) { result = true; } }); return result; } }; if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); } else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); } 
 </script>
 
 <style scoped>
@@ -420,8 +439,12 @@ export default defineComponent({
     text-align: center;
   }
 
+  .amenity-icon {
+    color: #5B6770;
+  }
+
   .hr {
-    border-top: 1px solid #E5E5E5;
+    border-top: 1px solid #D5D5D5;
     margin-top:0px;
     margin-bottom:0px;
   }
@@ -451,3 +474,4 @@ export default defineComponent({
   }
 
 </style>
+
