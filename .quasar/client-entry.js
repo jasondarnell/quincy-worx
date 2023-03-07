@@ -49,7 +49,7 @@ console.info('[Quasar] Running SPA.')
 
 
 
-const publicPath = `/`
+const publicPath = `/quincy-worx/`
 
 async function start ({
   app,
