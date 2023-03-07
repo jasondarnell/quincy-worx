@@ -69,10 +69,9 @@
       <div class="col-md-6 q-mt-lg">
         <div class="text-center">
           <p class="text-h4" >
-            We are a cowork space with incredibile amenities, flexible plans, and an unmatched experience. TODO: update.
-          </p>
+            We are a Coworking and shared office space with incredible amenities, flexible plans, and an unmatched experience.          </p>
           <p>
-            Quincy Worx provides a flexible solution for professionals looking for a better alternative work environment, collaboration, networking, increased creativity, and amenities to promote high productivity for success. TODO: update.
+            At Quincy Worx we offer varied and affordable Meeting Spaces to support our community. Including Day Passes (desk/office), conference & boardrooms, event/training space,  and Private Offices with flexible solutions for professionals looking for an alternative work environment. Quincy Worx is collaborative and encourages networking, increased creativity, and amenities to promote high productivity for success.
           </p>
         </div>
       </div>
