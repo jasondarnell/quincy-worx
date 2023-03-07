@@ -260,7 +260,7 @@
               Quincy, Illinois <br /> 
               62305 <br />
               <br />
-              <q-icon name="phone" /> 217-123-4567  
+              <q-icon name="phone" /> 217-919-0029  
               <br />
               <q-icon name="email" /> info@quincyworx.com
             </p>
