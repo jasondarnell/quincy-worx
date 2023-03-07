@@ -4,6 +4,7 @@
   "description": "Quincy Worx",
   "productName": "quincy-worx",
   "author": "Jason Darnell <jasdarnell@gmail.com>",
+  "homepage": "https://jasondarnell.github.io/quincy-worx",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
