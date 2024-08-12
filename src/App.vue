@@ -13,7 +13,7 @@
             Gallery
           </q-btn>
           <q-btn flat @click="goTo('memberships')">
-            Memberships
+            Pricing
           </q-btn>
           <q-btn flat  @click="goTo('contact')">
             Contact
@@ -202,6 +202,82 @@
               </q-card>
             </div>
         </div>
+        <!-- <div class="text-center q-mt-lg text-h5">
+          Room Rentals
+        </div>
+        <div class="row q-pa-md">
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Day Pass</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $15 / Day
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  8 AM - 5 PM weekday access <br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />    
+                  Unlimited Coffee, Beverages, and Snacks  <br /> 
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">The Worx</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $100 / Month
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  8 AM - 5 PM Weekday Access <br />
+                  Open Seating in the Business Lounge <br />
+                  High Speed Wifi  <br />
+                  Unlimited Coffee, Beverages, and Snacks  <br /> 
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Pro Worx</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center text-h6">
+                  $200 / Month
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  All Amenitites<br />
+                  24/7 Building Access<br />
+                  Conference Room Availability <br />
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="membership-card-header">
+                  <div class="text-h6">Private Office</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span style="color:#5B6770;">Starting At</span> <br />
+                  <span class="text-h6">$400 / Month</span> <br />
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  All Amenitites<br />
+                  24/7 Building Access<br />
+                  Conference Room Availability <br />
+                </q-card-section>
+              </q-card>
+            </div>
+        </div> -->
     </div>
 
     <hr class="hr" />
@@ -210,38 +286,58 @@
       <div class="text-center q-pa-lg text-h5">
         Gallery
       </div>
-          <div class="row justify-center">
-            <div class="col-md-8">
-              <q-carousel
-                v-model="slide"
-                transition-prev="slide-right"
-                transition-next="slide-left"
-                animated
-                navigation
-                padding
-                arrows
-                control-type="flat"
-                control-color="grey"
-                class="rounded-borders q-mx-lg"
-                 style="background: #FAFAFA"
+        <div class="row justify-center">
+          <div class="col-md-8">
+            <q-carousel
+              v-model="slide"
+              transition-prev="slide-right"
+              transition-next="slide-left"
+              animated
+              navigation
+              padding
+              arrows
+              control-type="flat"
+              control-color="grey"
+              class="rounded-borders q-mx-lg"
+                style="background: #FAFAFA"
+            >
+              <q-carousel-slide
+                v-for="slideImage in slideImages"
+                :key="slideImage.name"
+                :name="slideImage.name"
+                class="column no-wrap flex-center q-pt-none"
               >
-                <q-carousel-slide
-                  v-for="slideImage in slideImages"
-                  :key="slideImage.name"
-                  :name="slideImage.name"
-                  class="column no-wrap flex-center q-pt-none"
-                >
-                  <!-- <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" /> -->
-                  <q-img :src="slideImage.src" spinner-color="white" />
-                </q-carousel-slide>
-              </q-carousel> 
+                <!-- <q-img :src="getImageUrl(slideImage.src)" spinner-color="white" /> -->
+                <q-img :src="slideImage.src" spinner-color="white" />
+              </q-carousel-slide>
+            </q-carousel> 
 
-              <!-- <div class="row justify-center">
-                <q-btn-toggle glossy v-model="slide" :options="toggleOptions" />
-              </div> -->
-            </div>
+            <!-- <div class="row justify-center">
+              <q-btn-toggle glossy v-model="slide" :options="toggleOptions" />
+            </div> -->
           </div>
-    </div>        
+        </div>
+        <div class="row justify-center q-pa-lg">
+          <div class="col-md-8 text-center">
+            <q-btn label="Watch Video Walk Through" color="primary" @click="showVideo = true" />
+          </div>
+        </div>
+    </div>    
+
+    <q-dialog v-model="showVideo">
+      <q-card style="width:700px; max-width:80vw;" class="">
+        <q-card-section class="">
+          <q-video 
+            :src="videoSrc"
+            :ratio="16/9"
+              />        
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn flat label="Close" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+     
 
     <hr class="hr" />
     <!-- <div class="row text-h4" id="schedule-tour-row">
@@ -318,7 +414,9 @@ export default defineComponent({
   setup(){
     return {
       // getImageUrl,
+      showVideo: ref(false),
       joinDialog: ref(false),
+      videoSrc:  new URL("assets/video/qw_walk_thru.mp4", import.meta.url),
       slideImages:[
         // {
         //   name: "building_1",
@@ -326,40 +424,44 @@ export default defineComponent({
         // },
         {
           name: "building_2",
-          src: new URL("assets/building-images/building_2.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/Koontz.jpg", import.meta.url)
         },
         {
           name: "building_3",
-          src: new URL("assets/building-images/building_3.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/R5_A9283.jpg", import.meta.url)
         },
         {
           name: "building_4",
-          src: new URL("assets/building-images/building_4.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/R5_A9299.jpg", import.meta.url)
         },
         {
           name: "building_5",
-          src: new URL("assets/building-images/building_5.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/R5_A9303.jpg", import.meta.url)
         },
         {
           name: "building_6",
-          src: new URL("assets/building-images/building_6.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/R5_A9307.jpg", import.meta.url)
         },
         {
           name: "building_7",
-          src: new URL("assets/building-images/building_7.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/R5_A9319.jpg", import.meta.url)
         },
-        {
-          name: "building_8",
-          src: new URL("assets/building-images/building_8.jpg", import.meta.url)
-        },
+        // {
+        //   name: "building_8",
+        //   src: new URL("assets/building-images-2024-07/R5_A9327.jpg", import.meta.url)
+        // },
         {
           name: "building_9",
-          src: new URL("assets/building-images/building_9.jpg", import.meta.url)
+          src: new URL("assets/building-images-2024-07/R5_A9355.jpg", import.meta.url)
         },
         {
           name: "building_10",
-          src: new URL("assets/building-images/building_10.jpg", import.meta.url)
-        }
+          src: new URL("assets/building-images-2024-07/R5_A9375.jpg", import.meta.url)
+        },
+        {
+          name: "building_11",
+          src: new URL("assets/building-images-2024-07/R5_A9447.jpg", import.meta.url)
+        },
       ],
       slide: ref('building_2'),
     }
