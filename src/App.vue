@@ -4,6 +4,11 @@
       <!-- Navbar content goes here -->
         <q-toolbar class="mobile-hide">
           <q-toolbar-title class="text-h5" style="font-family:Nunito">
+            <q-img 
+            height="80px"
+            width="80px"
+            src="~assets/logo.png" 
+            />
             Quincy Worx
           </q-toolbar-title>
           <q-btn flat @click="goTo('amenities')">
@@ -32,12 +37,12 @@
           <q-btn 
           class="q-px-xl q-my-md" 
           size="lg"
-          style="background: #FBA504" 
+          style="background: #FFD700" 
           rounded 
           @click="joinNow"
           href="javascript:void( window.open( 'https://form.jotform.com/230655747373059', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )"
           >
-              <span class="text-subtitle1" style="text-transform: none">Join Now</span>
+              <span class="text-subtitle1" style="text-transform: none;color:black;font-weight:bold;">Join Now</span>
           </q-btn>
         </div>
     </q-header>
@@ -202,6 +207,87 @@
               </q-card>
             </div>
         </div>
+        <hr style="margin-top:40px;margin-bottom:40px"/>
+        <div class="text-center q-mt-lg text-h5">
+          Room Rentals
+        </div>
+        <div class="row q-pa-md">
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="room-card-header">
+                  <div class="text-h6">Day Office</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span class="text-h6">$20 / Hour </span><br />
+                  <span style="color:#5B6770;">Half and full day rates available</span>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  Offering a private, more intimate space to meet with a client or work productively.
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="room-card-header">
+                  <div class="text-h6">Conference Room</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span class="text-h6">$30 / Hour </span><br />
+                  <span style="color:#5B6770;">Half and full day rates available</span>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  This space offers the perfect environment for standard or virtual meetings. Seats up to 6 people.         
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="room-card-header">
+                  <div class="text-h6">Executive Board Room</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span class="text-h6">$30 / Hour </span><br />
+                  <span style="color:#5B6770;">Half and full day rates available</span>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  We offer a
+professional space to
+seat up to 8 people
+for meetings with
+clients or teams.                
+              </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-md-3 col-sm-12 q-my-sm">
+              <q-card class="q-ma-md membership-card">
+                <q-card-section class="room-card-header">
+                  <div class="text-h6">Event Room</div>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="text-center">
+                  <span class="text-h6">$60 / Hour </span><br />
+                  <span style="color:#5B6770;">Half and full day rates available</span>
+                </q-card-section>
+                <q-separator />
+                <q-card-section class="membership-card-details">
+                  We have
+flexible seating styles, with
+a large monitor. This
+space is perfect for your
+next training day,
+luncheon or anything in
+between.
+                </q-card-section>
+              </q-card>
+            </div>
+            
+        </div>
         <!-- <div class="text-center q-mt-lg text-h5">
           Room Rentals
         </div>
@@ -278,9 +364,10 @@
               </q-card>
             </div>
         </div> -->
+        <br />
     </div>
 
-    <hr class="hr" />
+    <hr class="hr " />
 
     <div style="background: #FAFAFA" ref="gallery" class="mobile-hide">
       <div class="text-center q-pa-lg text-h5">
@@ -361,8 +448,8 @@
             </p>
           </div>
           <div class="text-center">
-            <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FBA504; color: white" rounded @click="joinNow" href="javascript:void( window.open( 'https://form.jotform.com/230655747373059', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )">
-                <span class="text-subtitle1" style="text-transform: none">Join Now</span>
+            <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FFD700; color: white" rounded @click="joinNow" href="javascript:void( window.open( 'https://form.jotform.com/230655747373059', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )">
+                <span class="text-subtitle1" style="text-transform: none;color:black;font-weight:bold;">Join Now</span>
             </q-btn>
 
           </div>
@@ -528,11 +615,19 @@ let ifr = document.getElementById("JotFormIFrame-230655747373059"); if (ifr) { v
   }
 
   .membership-card-header {
-    color: white;
+    color: black;
     text-align: center;
-    background: #FBA504;
+    background: #CBDDEC;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .room-card-header {
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #001F3D
   }
 
   .membership-card-details {
