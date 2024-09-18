@@ -56,7 +56,6 @@
     <q-drawer
       v-if="isMobile"
       v-model="drawer"
-      :width="200"
       bordered
       class="mobile-only bg-grey-1"      
     >
@@ -74,7 +73,20 @@
             Contact
           </q-btn> -->
 
-      <q-list padding>
+      <q-list padding class="text-center">
+
+        <q-item>
+          <div class="text-h5" style="font-family:Nunito">
+            <q-img 
+            height="80px"
+            width="80px"
+            src="~assets/logo.png" 
+            />
+            Quincy Worx
+          </div>
+        </q-item>
+        <q-separator />
+
         <q-item clickable @click="goTo('amenities')">
           <q-item-section >
             Amenities
@@ -747,7 +759,7 @@ let ifr = document.getElementById("JotFormIFrame-230655747373059"); if (ifr) { v
   @media 
   only screen and (max-width: 767px)  {
     #hero{
-          filter: brightness(40%);
+          filter: brightness(70%);
           width: 100%; 
           height: 100% !important;
           content: url("assets/building-images/building_5_cropped.jpg") !important;
