@@ -7,7 +7,7 @@
         </q-toolbar>
 
       </div>
-    <q-header class="q-pa-md transparent">
+    <q-header class="q-pa-md transparent" style="z-index:10;">
       <!-- Navbar content goes here -->
         <q-toolbar v-if="!isMobile">
           <q-toolbar-title class="text-h5" style="font-family:Nunito">
