@@ -1,8 +1,15 @@
 <template>
     <q-layout >
+      <div class="floating-toolbar">
+        <q-toolbar v-if="isMobile" style="position: sticky; top: 0" color="">
+          <q-space />
+          <q-btn flat @click="toggleDrawer" round size="lg"  icon="menu" />
+        </q-toolbar>
+
+      </div>
     <q-header class="q-pa-md transparent">
       <!-- Navbar content goes here -->
-        <q-toolbar class="mobile-hide">
+        <q-toolbar v-if="!isMobile">
           <q-toolbar-title class="text-h5" style="font-family:Nunito">
             <q-img 
             height="80px"
@@ -46,6 +53,59 @@
           </q-btn>
         </div>
     </q-header>
+    <q-drawer
+      v-if="isMobile"
+      v-model="drawer"
+      :width="200"
+      bordered
+      class="mobile-only bg-grey-1"      
+    >
+<!-- 
+    <q-btn flat @click="goTo('amenities')">
+            Amenities
+          </q-btn>
+          <q-btn flat @click="goTo('gallery')">
+            Gallery
+          </q-btn>
+          <q-btn flat @click="goTo('memberships')">
+            Pricing
+          </q-btn>
+          <q-btn flat  @click="goTo('contact')">
+            Contact
+          </q-btn> -->
+
+      <q-list padding>
+        <q-item clickable @click="goTo('amenities')">
+          <q-item-section >
+            Amenities
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable @click="goTo('gallery')">
+          <q-item-section>
+            Gallery
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable @click="goTo('memberships')">
+          <q-item-section>
+            Pricing
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="goTo('contact')">
+          <q-item-section>
+            Contact
+          </q-item-section>
+        </q-item>
+
+        <q-separator />
+        <q-item clickable tag="a" href="https://quincyworx.skedda.com/" target="_blank">
+          <q-item-section>
+            Member Login
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-drawer>
     <q-page-container class="relative-position" style="height: 70vh;">
               <!-- src="~assets/building-images/building_10.jpg"  -->
 <!-- 
@@ -63,7 +123,7 @@
     <hr class="hr" />
 
     <div class="row q-pa-lg justify-center"  style="background: #FAFAFA">
-      <div class="col-md-4 col-sm-12 q-mt-lg mobile-hide">
+      <div class="col-md-4 col-12 q-mt-lg mobile-hide">
         <div class="justify-center">
         <q-img 
           src="~assets/building-images/building_11.jpg"
@@ -90,23 +150,23 @@
       </div>
   
   <div class="row text-center q-pa-lg justify-center" >
-      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+      <div class="col-md-2 col-12 q-my-sm text-h6">
         <q-icon name="wifi" size="lg" class="amenity-icon"/> <br />
         Super-Fast Internet
       </div>
-      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+      <div class="col-md-2 col-12 q-my-sm text-h6">
         <q-icon name="chair" size="lg"/> <br />
         Open Seating
       </div>
-      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+      <div class="col-md-2 col-12 q-my-sm text-h6">
         <q-icon name="coffee" size="lg"/> <br />
         Free Coffee, Snacks, and Beverages
       </div>
-      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+      <div class="col-md-2 col-12 q-my-sm text-h6">
         <q-icon name="restaurant" size="lg"/> <br />
        Shared Kitchen
       </div>
-      <div class="col-md-2 col-sm-12 q-my-sm text-h6">
+      <div class="col-md-2 col-12 q-my-sm text-h6">
         <q-icon name="print" size="lg"/> <br />
         Printer, Copier, Scanner
       </div>
@@ -130,7 +190,7 @@
           Memberships
         </div>
         <div class="row q-pa-md">
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Day Pass</div>
@@ -148,7 +208,7 @@
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">The Worx</div>
@@ -166,7 +226,7 @@
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Pro Worx</div>
@@ -188,7 +248,7 @@
                 </q-card-actions> -->
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Private Office</div>
@@ -212,7 +272,7 @@
           Room Rentals
         </div>
         <div class="row q-pa-md">
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="room-card-header">
                   <div class="text-h6">Day Office</div>
@@ -228,7 +288,7 @@
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="room-card-header">
                   <div class="text-h6">Conference Room</div>
@@ -244,7 +304,7 @@
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="room-card-header">
                   <div class="text-h6">Executive Board Room</div>
@@ -264,7 +324,7 @@ clients or teams.
               </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="room-card-header">
                   <div class="text-h6">Event Room</div>
@@ -292,7 +352,7 @@ between.
           Room Rentals
         </div>
         <div class="row q-pa-md">
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Day Pass</div>
@@ -310,7 +370,7 @@ between.
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">The Worx</div>
@@ -328,7 +388,7 @@ between.
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Pro Worx</div>
@@ -345,7 +405,7 @@ between.
                 </q-card-section>
               </q-card>
             </div>
-            <div class="col-md-3 col-sm-12 q-my-sm">
+            <div class="col-md-3 col-12 q-my-sm">
               <q-card class="q-ma-md membership-card">
                 <q-card-section class="membership-card-header">
                   <div class="text-h6">Private Office</div>
@@ -369,12 +429,12 @@ between.
 
     <hr class="hr " />
 
-    <div style="background: #FAFAFA" ref="gallery" class="mobile-hide">
+    <div style="background: #FAFAFA" ref="gallery" class="">
       <div class="text-center q-pa-lg text-h5">
         Gallery
       </div>
         <div class="row justify-center">
-          <div class="col-md-8">
+          <div class="col-12 col-md-8">
             <q-carousel
               v-model="slide"
               transition-prev="slide-right"
@@ -385,7 +445,7 @@ between.
               arrows
               control-type="flat"
               control-color="grey"
-              class="rounded-borders q-mx-lg"
+              class="rounded-borders"
                 style="background: #FAFAFA"
             >
               <q-carousel-slide
@@ -501,6 +561,8 @@ export default defineComponent({
   setup(){
     return {
       // getImageUrl,
+      isMobile: ref(false),
+      drawer: ref(false),
       showVideo: ref(false),
       joinDialog: ref(false),
       videoSrc:  new URL("assets/video/qw_walk_thru.mp4", import.meta.url),
@@ -553,6 +615,10 @@ export default defineComponent({
       slide: ref('building_2'),
     }
   },
+  mounted(){
+    console.log("this.$q.platform", this.$q.platform)
+    this.isMobile = this.$q.platform.is.mobile;
+  },
   computed: {
     toggleOptions() {
       return this.slideImages.map((slideImage, idx)=>{
@@ -569,15 +635,21 @@ export default defineComponent({
   },
   methods: {
     goTo(ref){
-        this.$refs[ref].scrollIntoView({
+        this.drawer = false;
+        setTimeout(()=>{
+          this.$refs[ref].scrollIntoView({
             behavior: 'smooth',
             block: 'start',
             inline: 'start'
-        })
+        }, 100)
+      })
     },
     joinNow(){
       // this.joinDialog = true;
       // window.open( 'https://form.jotform.com/230655747373059', 'scrollbars=yes, toolbar=no, width=700, height=500' )
+    },
+    toggleDrawer(){
+      this.drawer = !this.drawer
     }
   }
 })
@@ -589,11 +661,24 @@ let ifr = document.getElementById("JotFormIFrame-230655747373059"); if (ifr) { v
 </script>
 
 <style scoped>
+
+  body {
+    position: relative;
+    z-index: 0;
+  }
+  .floating-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1200; /* Ensure it sits above the header and other content */
+    background-color: transparent; /* Ensure toolbar background is visible */
+  }
+
   .bg-image {
     background-image: url("assets/building-images/building_10.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-
     min-height: 90vh;  
   }
 
@@ -603,6 +688,7 @@ let ifr = document.getElementById("JotFormIFrame-230655747373059"); if (ifr) { v
 
   .relative-position {
     position: relative;
+    z-index: 0;
   }
   /* .absolute-position {
     position: absolute;
