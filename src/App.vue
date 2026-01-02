@@ -495,8 +495,20 @@
         <div class="col-md-6 text-center">
           <q-img src="~assets/building-images/building_1.jpg" />
         </div>
+        <div class="col-12 q-mt-lg text-center">
+          <iframe
+            src="https://maps.google.com/maps?q=3701+E+Lake+Center,+Quincy,+IL+62305&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; max-width: 600px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
+
     <div class="row">
       <q-toolbar style="background-color:#222222; color: white;">
         <q-space />
