@@ -150,7 +150,7 @@
       <div class="row text-center q-pa-lg justify-center">
         <div class="col-md-2 col-6 q-my-sm amenity-item">
           <q-icon name="wifi" size="lg" />
-          <div class="text-subtitle1">Super-Fast Internet</div>
+          <div class="text-subtitle1">Professional Wifi</div>
         </div>
         <div class="col-md-2 col-6 q-my-sm amenity-item">
           <q-icon name="chair" size="lg" />
@@ -167,6 +167,10 @@
         <div class="col-md-2 col-6 q-my-sm amenity-item">
           <q-icon name="print" size="lg" />
           <div class="text-subtitle1">Printer, Copier, Scanner</div>
+        </div>
+        <div class="col-md-2 col-6 q-my-sm amenity-item">
+          <q-icon name="support_agent" size="lg" />
+          <div class="text-subtitle1">Receptionist</div>
         </div>
       </div>
 
