@@ -516,6 +516,13 @@
               <br />
               <q-icon name="email" /> info@quincyworx.com
             </p>
+            <p class="text-subtitle1">
+              <q-btn flat round icon="fab fa-facebook" color="primary" type="a"
+                href="https://www.facebook.com/QuincyWorx" target="_blank" aria-label="Quincy Worx on Facebook" />
+              <q-btn flat round icon="fab fa-linkedin" color="primary" type="a"
+                href="https://www.linkedin.com/in/quincy-worx-premiere-coworking-space-and-meeting-rooms-62a174227"
+                target="_blank" aria-label="Quincy Worx on LinkedIn" />
+            </p>
           </div>
           <div class="text-center">
             <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FFD700; color: white" rounded @click="joinNow"
@@ -548,6 +555,11 @@
         <span class="text-caption">
           Copyright © {{ currYear }} - Quincy Worx
         </span>
+        <q-btn flat round size="sm" icon="fab fa-facebook" type="a" href="https://www.facebook.com/QuincyWorx"
+          target="_blank" aria-label="Quincy Worx on Facebook" />
+        <q-btn flat round size="sm" icon="fab fa-linkedin" type="a"
+          href="https://www.linkedin.com/in/quincy-worx-premiere-coworking-space-and-meeting-rooms-62a174227"
+          target="_blank" aria-label="Quincy Worx on LinkedIn" />
         <q-space />
 
         <!-- <q-btn flat size="sm">
