@@ -23,6 +23,9 @@
         <q-btn flat @click="goTo('memberships')">
           Pricing
         </q-btn>
+        <q-btn flat @click="goTo('testimonialsSection')">
+          Reviews
+        </q-btn>
         <q-btn flat @click="goTo('faq')">
           FAQ
         </q-btn>
@@ -75,6 +78,11 @@
         <q-item clickable @click="goTo('memberships')">
           <q-item-section>
             Pricing
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="goTo('testimonialsSection')">
+          <q-item-section>
+            Reviews
           </q-item-section>
         </q-item>
         <q-item clickable @click="goTo('faq')">
@@ -476,6 +484,33 @@
 
     <hr class="hr" />
 
+    <div ref="testimonialsSection" style="background: #F1F2F2">
+      <div class="text-center q-pa-lg text-h5">
+        What Our Members Are Saying
+      </div>
+      <div class="row justify-center q-pb-xl">
+        <div class="col-12 col-md-10 q-px-md">
+          <div class="testimonial-columns">
+            <q-card v-for="testimonial in testimonials" :key="testimonial.name" class="testimonial-card">
+              <q-card-section class="testimonial-body">
+                <q-rating :model-value="5" readonly size="1.4em" color="amber" icon="star" />
+                <p v-for="(paragraph, idx) in testimonial.paragraphs" :key="idx"
+                  class="testimonial-text q-mt-md q-mb-none">
+                  {{ paragraph }}
+                </p>
+              </q-card-section>
+              <q-separator />
+              <q-card-section class="testimonial-author">
+                — {{ testimonial.name }}
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr" />
+
     <div ref="faq" style="background: #FFFFFF">
       <div class="text-center q-pa-lg text-h5">
         Frequently Asked Questions
@@ -687,6 +722,36 @@
             answer: "Depends on your membership — hot desks in the Lounge/Cafe are shared; bookable meeting rooms and private offices are reserved."
           }
         ],
+        testimonials: [
+          {
+            name: "Erica Wagner",
+            paragraphs: [
+              "I can’t say enough great things about this co-working space in Quincy. I found it unexpectedly while in town for a family emergency, and it truly became a lifeline during a very stressful time. I initially reserved one month but found it so comfortable I was able to extend my reservation for another, and having a reliable, welcoming place to work remotely has made all the difference.",
+              "The space is clean, quiet, and well-equipped, with everything I needed to stay productive. The atmosphere is professional but still warm and inviting, which helped me stay focused while also feeling supported during a difficult period.",
+              "What stood out most was how accommodating and kind everyone was. It didn’t feel like just a workspace — it felt like a community.",
+              "If you’re ever in Quincy and need a place to work, whether short-term or longer, I highly recommend this spot. It exceeded my expectations and gave me one less thing to worry about when I needed it most."
+            ]
+          },
+          {
+            name: "Sara Fischer",
+            paragraphs: [
+              "I needed a space to work for a few days and they were able to accommodate! They were very responsive during the reservation process and were very helpful when I arrived to ensure I had everything I needed. The space was comfortable and had plenty of amenities available. I will be utilizing them again for future needs!"
+            ]
+          },
+          {
+            name: "Heather Hoffman",
+            paragraphs: [
+              "I absolutely love this office space. The environment is clean, modern, quiet, and welcoming — exactly what I want for my patients. The layout is thoughtful and professional, creating a calm and comfortable setting that puts people at ease the moment they walk in.",
+              "As a provider, I appreciate how seamless the experience has been. It’s clear that a lot of care goes into maintaining a space that supports both professionals and the clients they serve. I’m very happy to be seeing my patients here and would highly recommend this office to anyone looking for a professional, welcoming space."
+            ]
+          },
+          {
+            name: "Jennifer Ringwelski",
+            paragraphs: [
+              "I needed a transitional, co-working space for a change in environment for work and Quincy Worx has been a great fit for that need. They provide a nice, quiet and comfortable working space with nice amenities. There are optional conference spaces available for rent as well so it's flexible for single or groups of workers. They also provide networking opportunities for small businesses and professionals."
+            ]
+          }
+        ],
       }
     },
     mounted() {
@@ -836,6 +901,30 @@
     line-height: 1.3;
   }
 
+  .testimonial-columns {
+    column-count: 2;
+    column-gap: 16px;
+  }
+
+  .testimonial-card {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 31, 61, 0.10);
+  }
+
+  .testimonial-text {
+    color: #5B6770;
+    font-style: italic;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .testimonial-author {
+    color: #001F3D;
+    font-weight: 600;
+  }
+
   .faq-list {
     background: #FFFFFF;
     border-radius: 8px;
@@ -883,6 +972,10 @@
   @media only screen and (max-width: 767px) {
     .hero-title {
       font-size: 1.9rem;
+    }
+
+    .testimonial-columns {
+      column-count: 1;
     }
 
     .about-lead {
