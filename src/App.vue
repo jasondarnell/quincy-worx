@@ -7,9 +7,9 @@
       </q-toolbar>
 
     </div>
-    <q-header class="q-pa-md transparent" style="z-index:10;">
+    <q-header v-if="!isMobile" class="q-pa-md transparent" style="z-index:10;">
       <!-- Navbar content goes here -->
-      <q-toolbar v-if="!isMobile">
+      <q-toolbar>
         <q-toolbar-title class="text-h5" style="font-family:Nunito">
           <q-img height="80px" width="80px" src="~assets/logo.png" />
           Quincy Worx
@@ -34,17 +34,6 @@
           Member Login
         </q-btn>
       </q-toolbar>
-      <br />
-      <div class="text-center text-h3 q-ma-lg">
-        <b>Quincy's Premiere Coworking Space</b>
-      </div>
-      <br />
-      <div class="text-center q-ma-lg ">
-        <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FFD700" rounded @click="joinNow"
-          href="javascript:void( window.open( 'https://form.jotform.com/230655747373059', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )">
-          <span class="text-subtitle1" style="text-transform: none;color:black;font-weight:bold;">Join Now</span>
-        </q-btn>
-      </div>
     </q-header>
     <q-drawer v-if="isMobile" v-model="drawer" bordered class="mobile-only bg-grey-1">
       <!-- 
@@ -117,6 +106,15 @@
         /> -->
 
       <img id="hero" />
+      <div class="hero-content">
+        <div class="text-center hero-title q-ma-lg">
+          Quincy's Premiere Coworking Space
+        </div>
+        <q-btn class="q-px-xl q-my-md" size="lg" style="background: #FFD700" rounded @click="joinNow"
+          href="javascript:void( window.open( 'https://form.jotform.com/230655747373059', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) )">
+          <span class="text-subtitle1" style="text-transform: none;color:black;font-weight:bold;">Join Now</span>
+        </q-btn>
+      </div>
     </q-page-container>
 
     <hr class="hr" />
@@ -129,10 +127,10 @@
       </div>
       <div class="col-md-6 q-mt-lg">
         <div class="text-center">
-          <p class="text-h4">
+          <p class="about-lead">
             We are a Coworking and shared office space with incredible amenities, flexible plans, and an unmatched
             experience. </p>
-          <p>
+          <p class="text-body1 body-copy">
             At Quincy Worx we offer varied and affordable Meeting Spaces to support our community. Including Day Passes
             (desk/office), conference & boardrooms, event/training space, and Private Offices with flexible solutions
             for professionals looking for an alternative work environment. Quincy Worx is collaborative and encourages
@@ -144,31 +142,31 @@
 
     <hr class="hr" />
 
-    <div ref="amenities" class="justify-center  amenity-icon q-pa-md" style="background: #F1F2F2; ">
+    <div ref="amenities" class="justify-center  amenity-icon q-py-lg q-px-md" style="background: #F1F2F2; ">
       <div class="row justify-center text-h5  q-pa-lg">
         Amenities
       </div>
 
       <div class="row text-center q-pa-lg justify-center">
-        <div class="col-md-2 col-12 q-my-sm text-h6">
-          <q-icon name="wifi" size="lg" class="amenity-icon" /> <br />
-          Super-Fast Internet
+        <div class="col-md-2 col-6 q-my-sm amenity-item">
+          <q-icon name="wifi" size="lg" />
+          <div class="text-subtitle1">Super-Fast Internet</div>
         </div>
-        <div class="col-md-2 col-12 q-my-sm text-h6">
-          <q-icon name="chair" size="lg" /> <br />
-          Open Seating
+        <div class="col-md-2 col-6 q-my-sm amenity-item">
+          <q-icon name="chair" size="lg" />
+          <div class="text-subtitle1">Open Seating</div>
         </div>
-        <div class="col-md-2 col-12 q-my-sm text-h6">
-          <q-icon name="coffee" size="lg" /> <br />
-          Free Coffee, Snacks, and Beverages
+        <div class="col-md-2 col-6 q-my-sm amenity-item">
+          <q-icon name="coffee" size="lg" />
+          <div class="text-subtitle1">Free Coffee, Snacks, and Beverages</div>
         </div>
-        <div class="col-md-2 col-12 q-my-sm text-h6">
-          <q-icon name="restaurant" size="lg" /> <br />
-          Shared Kitchen
+        <div class="col-md-2 col-6 q-my-sm amenity-item">
+          <q-icon name="restaurant" size="lg" />
+          <div class="text-subtitle1">Shared Kitchen</div>
         </div>
-        <div class="col-md-2 col-12 q-my-sm text-h6">
-          <q-icon name="print" size="lg" /> <br />
-          Printer, Copier, Scanner
+        <div class="col-md-2 col-6 q-my-sm amenity-item">
+          <q-icon name="print" size="lg" />
+          <div class="text-subtitle1">Printer, Copier, Scanner</div>
         </div>
       </div>
 
@@ -177,15 +175,17 @@
 
     <hr class="hr" />
 
-    <div style="background: #FFFFFF" class="q-ma-lg">
+    <div style="background: #FFFFFF" class="q-pa-lg">
       <div class="row text-center" ref="memberships">
         <q-space />
         <div class="col-md-6">
-          <span class="text-h6">Options For Growing Teams</span> <br />
-          At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our
-          memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from
-          private offices to shared workspace. All members have access to extensive amenities and services, specifically
-          created with entrepreneurs in mind, so you can focus on the important things.
+          <div class="text-h5">Options For Growing Teams</div>
+          <p class="text-body1 body-copy q-mt-sm">
+            At Quincy Worx, we believe that choosing the right Cowork Space should be stress-free. We’ve built our
+            memberships to be as flexible and responsive as possible, with options for individuals and entrepreneurs, from
+            private offices to shared workspace. All members have access to extensive amenities and services, specifically
+            created with entrepreneurs in mind, so you can focus on the important things.
+          </p>
         </div>
         <q-space />
       </div>
@@ -270,7 +270,7 @@
           </q-card>
         </div>
       </div>
-      <hr style="margin-top:40px;margin-bottom:40px" />
+      <hr class="hr q-my-xl" />
       <div class="text-center q-mt-lg text-h5">
         Room Rentals
       </div>
@@ -427,7 +427,6 @@
               </q-card>
             </div>
         </div> -->
-      <br />
     </div>
 
     <hr class="hr " />
@@ -502,7 +501,7 @@
     </div> -->
     <div style="">
       <div class="row q-pa-xl" ref="contact">
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
           <div class="">
             <p class="text-h5 text-center">
               Contact
@@ -794,10 +793,43 @@
   .membership-card-details {
     color: #5B6770;
     text-align: center;
+    font-size: 0.9375rem;
   }
 
   .amenity-icon {
     color: #5B6770;
+  }
+
+  .amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .about-lead {
+    font-size: 2.125rem;
+    line-height: 1.3;
   }
 
   .faq-list {
@@ -845,6 +877,18 @@
   }
 
   @media only screen and (max-width: 767px) {
+    .hero-title {
+      font-size: 1.9rem;
+    }
+
+    .about-lead {
+      font-size: 1.4rem;
+    }
+
+    .body-copy {
+      text-align: left;
+    }
+
     #hero {
       filter: brightness(70%);
       width: 100%;
