@@ -23,6 +23,9 @@
         <q-btn flat @click="goTo('memberships')">
           Pricing
         </q-btn>
+        <q-btn flat @click="goTo('faq')">
+          FAQ
+        </q-btn>
         <q-btn flat @click="goTo('contact')">
           Contact
         </q-btn>
@@ -83,6 +86,11 @@
         <q-item clickable @click="goTo('memberships')">
           <q-item-section>
             Pricing
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="goTo('faq')">
+          <q-item-section>
+            FAQ
           </q-item-section>
         </q-item>
         <q-item clickable @click="goTo('contact')">
@@ -464,6 +472,31 @@
 
 
     <hr class="hr" />
+
+    <div ref="faq" style="background: #FFFFFF">
+      <div class="text-center q-pa-lg text-h5">
+        Frequently Asked Questions
+      </div>
+      <div class="row justify-center q-pb-xl">
+        <div class="col-12 col-md-8 q-px-md">
+          <q-list class="faq-list">
+            <template v-for="(faq, idx) in faqs" :key="faq.question">
+              <q-separator v-if="idx > 0" />
+              <q-expansion-item :label="faq.question"
+                header-class="faq-question text-subtitle1 text-weight-medium">
+                <q-card>
+                  <q-card-section class="faq-answer">
+                    {{ faq.answer }}
+                  </q-card-section>
+                </q-card>
+              </q-expansion-item>
+            </template>
+          </q-list>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr" />
     <!-- <div class="row text-h4" id="schedule-tour-row">
       <span id=""><b>Schedule a tour</b> to explore our facility.</span>
     </div> -->
@@ -605,6 +638,40 @@
           },
         ],
         slide: ref('building_2'),
+        faqs: [
+          {
+            question: "What is a coworking space and who uses it?",
+            answer: "A shared office environment where business professionals and/or companies can rent desks or offices with free access to amenities. Ideal members include freelancers, remote workers, startups, small businesses, consultants, digital nomads, and even larger companies."
+          },
+          {
+            question: "What types of memberships are available and what's included?",
+            answer: "Private office, day pass, and flexible use package. All amenities are included: professional Wi-Fi, utilities, meeting rooms, coffee/tea, snacks, community events, kitchen, and access Monday - Friday 8 AM - 5 PM. Some memberships include 24/7 access, especially private offices or dedicated desk plans."
+          },
+          {
+            question: "How can a coworking space help my business grow?",
+            answer: "Networking, professional setting, flat rate/budgeted costs, access to resources, and business exposure. Quincy Worx provides structure, reduces isolation, and increases productivity. Quincy Worx hosts many social events, workshops, and collaboration opportunities."
+          },
+          {
+            question: "Is there a long-term lease or commitment?",
+            answer: "Quincy Worx offers flexible month-to-month memberships, though discounts may apply for longer terms."
+          },
+          {
+            question: "Do I have to pay a deposit?",
+            answer: "No – Quincy Worx does not require a security deposit."
+          },
+          {
+            question: "Are meeting rooms available?",
+            answer: "Yes — usually available for booking, often included with membership (depending on the plan)."
+          },
+          {
+            question: "Is it quiet enough to focus, work, and take calls?",
+            answer: "Quincy Worx has quiet zones and meeting rooms for focused work and privacy."
+          },
+          {
+            question: "Will I get my own desk or is it first-come, first-served?",
+            answer: "Depends on your membership — hot desks in the Lounge/Cafe are shared; bookable meeting rooms and private offices are reserved."
+          }
+        ],
       }
     },
     mounted() {
@@ -719,6 +786,31 @@
 
   .amenity-icon {
     color: #5B6770;
+  }
+
+  .faq-list {
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 31, 61, 0.10);
+    overflow: hidden;
+  }
+
+  .faq-list :deep(.faq-question) {
+    color: #001F3D;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .faq-list :deep(.q-expansion-item--expanded) .faq-question {
+    background: #F1F5F9;
+  }
+
+  .faq-answer {
+    color: #5B6770;
+    border-left: 3px solid #FFD700;
+    background: #FAFAFA;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
   }
 
   .hr {
