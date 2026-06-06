@@ -555,9 +555,9 @@
               <q-icon name="email" /> info@quincyworx.com
             </p>
             <p class="text-subtitle1">
-              <q-btn flat round icon="fab fa-facebook" color="primary" type="a"
+              <q-btn flat round icon="fab fa-facebook" style="color: #1877F2" type="a"
                 href="https://www.facebook.com/QuincyWorx" target="_blank" aria-label="Quincy Worx on Facebook" />
-              <q-btn flat round icon="fab fa-linkedin" color="primary" type="a"
+              <q-btn flat round icon="fab fa-linkedin" style="color: #0A66C2" type="a"
                 href="https://www.linkedin.com/in/quincy-worx-premiere-coworking-space-and-meeting-rooms-62a174227"
                 target="_blank" aria-label="Quincy Worx on LinkedIn" />
             </p>
