@@ -252,7 +252,7 @@
             </q-card-section>
             <q-separator />
             <q-card-section class="membership-card-details">
-              All Amenitites<br />
+              All Amenities<br />
               24/7 Building Access<br />
               Conference Room Availability <br />
             </q-card-section>
@@ -275,7 +275,7 @@
             </q-card-section>
             <q-separator />
             <q-card-section class="membership-card-details">
-              All Amenitites<br />
+              All Amenities<br />
               24/7 Building Access<br />
               Conference Room Availability <br />
             </q-card-section>
@@ -414,7 +414,7 @@
                 </q-card-section>
                 <q-separator />
                 <q-card-section class="membership-card-details">
-                  All Amenitites<br />
+                  All Amenities<br />
                   24/7 Building Access<br />
                   Conference Room Availability <br />
                 </q-card-section>
@@ -432,7 +432,7 @@
                 </q-card-section>
                 <q-separator />
                 <q-card-section class="membership-card-details">
-                  All Amenitites<br />
+                  All Amenities<br />
                   24/7 Building Access<br />
                   Conference Room Availability <br />
                 </q-card-section>
