@@ -695,7 +695,7 @@
           },
           {
             question: "What types of memberships are available and what's included?",
-            answer: "Private office, day pass, and flexible use package. All amenities are included: professional Wi-Fi, utilities, meeting rooms, coffee/tea, snacks, community events, kitchen, and access Monday - Friday 8 AM - 5 PM. Some memberships include 24/7 access, especially private offices or dedicated desk plans."
+            answer: "Private office, day pass, and flexible use package. All amenities are included: professional Wi-Fi, utilities, meeting rooms, coffee/tea, snacks, community events, kitchen, receptionist, and access Monday - Friday 8 AM - 5 PM. Some memberships include 24/7 access, especially private offices or dedicated desk plans."
           },
           {
             question: "How can a coworking space help my business grow?",
