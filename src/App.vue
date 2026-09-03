@@ -212,7 +212,7 @@
             </q-card-section>
             <q-separator />
             <q-card-section class="text-center text-h6">
-              $15 / Day
+              $20 / Day
             </q-card-section>
             <q-separator />
             <q-card-section class="membership-card-details">
@@ -374,7 +374,7 @@
                 </q-card-section>
                 <q-separator />
                 <q-card-section class="text-center text-h6">
-                  $15 / Day
+                  $20 / Day
                 </q-card-section>
                 <q-separator />
                 <q-card-section class="membership-card-details">
